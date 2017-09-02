@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CodeFirst.Models.Image>
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+@foreach(var item in Model)
+{
+    
+        var base64 = Convert.ToBase64String(item.ImageFile);
+        var imagers = string.Format("data:image/gif;base64,{0}", base64);
+    
+            <img src="@imagers" />
+}
+
+
+      
+    
+}
+
